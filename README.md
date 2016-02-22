@@ -12,7 +12,7 @@ GPU Lesser General Public License (LGPL)
 
 With Composer:
 
-    composer require franzl/lti
+    composer require France-ioi/lti
 
 ## Usage
 
