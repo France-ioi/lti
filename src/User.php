@@ -180,7 +180,12 @@ class User
     {
         if (empty($idScope)) {
             if (!is_null($this->resourceLink)) {
-                $idScope = $this->resourceLink->getConsumer()->id_scope;
+                $consumer = $this->resourceLink->getConsumer();
+                if (property_exists($consumer, 'id_scope')) {
+                    $idScope = $this->resourceLink->getConsumer()->id_scope;
+                } else {
+                    $idScope = ToolProvider::ID_SCOPE_ID_ONLY;
+                }
             } else {
                 $idScope = ToolProvider::ID_SCOPE_ID_ONLY;
             }
