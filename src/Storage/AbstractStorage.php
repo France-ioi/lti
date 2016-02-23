@@ -262,8 +262,7 @@ abstract class AbstractStorage
                 if (is_null($type)) {
                     $type = 'PDO';
                 }
-                $type = strtolower($type);
-                $type = __NAMESPACE__ . "{$type}Storage";
+                $type = __NAMESPACE__ . '\\'.$type.'Storage';
                 if (is_null($db)) {
                     $data_connector = new $type($prefix);
                 } else {
